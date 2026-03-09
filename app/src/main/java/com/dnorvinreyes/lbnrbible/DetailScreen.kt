@@ -24,11 +24,11 @@ fun DetailScreen(name: String){
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Spacer(modifier = Modifier.weight(1f))
-        Text(text = "Detail Screen", fontSize = 20.sp)
+        Text(text = "Detail Screen $name", fontSize = 20.sp)
         Spacer(modifier = Modifier.weight(1f))
-        TextField(value = text, onValueChange = { text = it })
+        //TextField(value = text, onValueChange = { text = it })
         Spacer(modifier = Modifier.weight(1f))
-        Button(onClick = { navigateToDetail(text) }) {
+        Button(onClick = {  }) {
             Text(text = "Navegar al detalle")
         }
         Spacer(modifier = Modifier.weight(1f))
