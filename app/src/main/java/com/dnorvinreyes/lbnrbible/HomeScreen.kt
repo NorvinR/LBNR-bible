@@ -14,7 +14,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.sp
-import com.dnorvinreyes.lbnrbible.core.navigation.Home
 
 @Composable
 fun HomeScreen(
