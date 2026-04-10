@@ -5,9 +5,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
-import com.dnorvinreyes.lbnrbible.DetailScreen
-import com.dnorvinreyes.lbnrbible.HomeScreen
-import com.dnorvinreyes.lbnrbible.LoginScreen
+import com.dnorvinreyes.lbnrbible.ui.DetailScreen
+import com.dnorvinreyes.lbnrbible.ui.HomeScreen
+import com.dnorvinreyes.lbnrbible.ui.LoginScreen
 
 @Composable
 fun NavigationWrapper() {
