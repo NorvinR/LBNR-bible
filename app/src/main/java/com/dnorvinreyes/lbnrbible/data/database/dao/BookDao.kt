@@ -5,7 +5,7 @@ import androidx.room.Query
 import com.dnorvinreyes.lbnrbible.data.database.entity.BookEntity
 
 @Dao
-interface LibroDao {
+interface BookDao {
     @Query("SELECT * FROM libros order by 1")
-    suspend fun getAllLibros(): List<BookEntity>
+    suspend fun getAllBooks(): List<BookEntity>
 }

@@ -1,32 +1,21 @@
 package com.dnorvinreyes.lbnrbible.data.repository
-import com.dnorvinreyes.lbnrbible.data.database.dao.LibroDao
-import com.dnorvinreyes.lbnrbible.data.database.entity.BookEntity
+import com.dnorvinreyes.lbnrbible.data.database.dao.BookDao
+import com.dnorvinreyes.lbnrbible.data.mapper.toDomain
+import com.dnorvinreyes.lbnrbible.domain.model.Book
 import com.dnorvinreyes.lbnrbible.domain.model.Chapter
 import com.dnorvinreyes.lbnrbible.domain.model.Concordance
 import com.dnorvinreyes.lbnrbible.domain.model.Title
 import com.dnorvinreyes.lbnrbible.domain.model.Verse
 import com.dnorvinreyes.lbnrbible.domain.repository.BibleRepository
+import javax.inject.Inject
 
-/*
-class BibleRepositoryImp(
-    private val bookDao: LibroDao,
-    private val chapterDao: CapituloDao
-) {
-    // Libros
-    suspend fun getBooks(): List<Libro>{
-        return bookDao.getAllLibros()
-    }
-}
-*/
 
-class BibleRepositoryImp(
-    private val bookDao: LibroDao
+class BibleRepositoryImp @Inject constructor (
+    private val bookDao: BookDao
 ) : BibleRepository {
-    override suspend fun getBooks(): List<BookEntity> {
-        val books =  bookDao.getAllLibros()
-        return books.map {
-            BookEntity(it.numeroLibro, it.nombreLibro)
-        }
+    override suspend fun getBooks(): List<Book> {
+        val books =  bookDao.getAllBooks()
+        return books.map { it.toDomain() }
     }
 
     override suspend fun getChapters(bookNumber: Int): List<Chapter> {

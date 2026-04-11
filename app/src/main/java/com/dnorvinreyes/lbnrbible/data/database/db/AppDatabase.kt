@@ -4,8 +4,8 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.dnorvinreyes.lbnrbible.data.database.dao.CapituloDao
-import com.dnorvinreyes.lbnrbible.data.database.dao.LibroDao
+import com.dnorvinreyes.lbnrbible.data.database.dao.ChapterDao
+import com.dnorvinreyes.lbnrbible.data.database.dao.BookDao
 import com.dnorvinreyes.lbnrbible.data.database.entity.ChapterEntity
 import com.dnorvinreyes.lbnrbible.data.database.entity.ConcordanceEntity
 import com.dnorvinreyes.lbnrbible.data.database.entity.BookEntity
@@ -39,8 +39,8 @@ import com.dnorvinreyes.lbnrbible.data.database.entity.VerseEntity
 
 abstract class AppDatabase : RoomDatabase() {
     // DAOs
-    abstract fun libroDao(): LibroDao
-    abstract fun capituloDao(): CapituloDao
+    abstract fun libroDao(): BookDao
+    abstract fun capituloDao(): ChapterDao
 
     companion object {
 
