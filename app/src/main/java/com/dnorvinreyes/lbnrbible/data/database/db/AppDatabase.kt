@@ -6,11 +6,11 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.dnorvinreyes.lbnrbible.data.database.dao.CapituloDao
 import com.dnorvinreyes.lbnrbible.data.database.dao.LibroDao
-import com.dnorvinreyes.lbnrbible.data.database.entity.Capitulo
-import com.dnorvinreyes.lbnrbible.data.database.entity.Concordancia
-import com.dnorvinreyes.lbnrbible.data.database.entity.Libro
-import com.dnorvinreyes.lbnrbible.data.database.entity.Titulo
-import com.dnorvinreyes.lbnrbible.data.database.entity.Versiculo
+import com.dnorvinreyes.lbnrbible.data.database.entity.ChapterEntity
+import com.dnorvinreyes.lbnrbible.data.database.entity.ConcordanceEntity
+import com.dnorvinreyes.lbnrbible.data.database.entity.BookEntity
+import com.dnorvinreyes.lbnrbible.data.database.entity.TitleEntity
+import com.dnorvinreyes.lbnrbible.data.database.entity.VerseEntity
 
 /**
  * AppDatabase define la configuracion de la base de datos de la app
@@ -27,11 +27,11 @@ import com.dnorvinreyes.lbnrbible.data.database.entity.Versiculo
 
 @Database(
     entities = [
-        Libro::class,
-        Capitulo::class,
-        Versiculo::class,
-        Titulo::class,
-        Concordancia::class
+        BookEntity::class,
+        ChapterEntity::class,
+        VerseEntity::class,
+        TitleEntity::class,
+        ConcordanceEntity::class
     ],
     version = 1,
     exportSchema = false

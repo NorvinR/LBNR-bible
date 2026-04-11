@@ -1,10 +1,7 @@
 package com.dnorvinreyes.lbnrbible.ui.main
 
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -40,7 +37,7 @@ import kotlinx.coroutines.launch
 @Composable
 fun MainScreen (viewModel: MainViewModel) {
 
-    val libros = viewModel.libros
+    val libros = viewModel.bookEntities
 
     /** Variables utiles para los tabs */
     val scope = rememberCoroutineScope ()

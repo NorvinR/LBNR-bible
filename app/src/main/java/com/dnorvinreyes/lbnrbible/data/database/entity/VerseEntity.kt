@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 
-@Entity(tableName = "titulos",
+@Entity(tableName = "versiculos",
     primaryKeys = [
         "numero_libro",
         "numero_capitulo",
@@ -12,14 +12,14 @@ import androidx.room.ForeignKey
     ],
     foreignKeys = [
         ForeignKey(
-            entity = Versiculo::class,
-            parentColumns = ["numero_libro", "numero_capitulo", "numero_versiculo"],
-            childColumns = ["numero_libro", "numero_capitulo", "numero_versiculo"]
+            entity = ChapterEntity::class,
+            parentColumns = ["numero_libro", "numero_capitulo"],
+            childColumns = ["numero_libro", "numero_capitulo"]
         )
     ])
-data class Titulo(
+data class VerseEntity(
     @ColumnInfo(name = "numero_libro") val numeroLibro: Int,
     @ColumnInfo(name = "numero_capitulo") val numeroCapitulo: Int,
     @ColumnInfo(name = "numero_versiculo") val numeroVersiculo: Int,
-    @ColumnInfo(name = "texto") val textoTitulo: String
+    @ColumnInfo(name = "texto") val textoVersiculo: String
 )

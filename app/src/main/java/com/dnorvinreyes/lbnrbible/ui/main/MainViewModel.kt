@@ -5,14 +5,14 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.dnorvinreyes.lbnrbible.data.database.entity.Libro
+import com.dnorvinreyes.lbnrbible.data.database.entity.BookEntity
 import com.dnorvinreyes.lbnrbible.data.repository.BibleRepositoryImp
 import kotlinx.coroutines.launch
 
 class MainViewModel (
     private val repository: BibleRepositoryImp
 ) : ViewModel() {
-    var libros by mutableStateOf<List<Libro>>(emptyList())
+    var bookEntities by mutableStateOf<List<BookEntity>>(emptyList())
         private set
 
     init {
@@ -21,7 +21,7 @@ class MainViewModel (
 
     private fun cargarLibros(){
         viewModelScope.launch {
-            libros = repository.getBooks()
+            bookEntities = repository.getBooks()
         }
     }
 }

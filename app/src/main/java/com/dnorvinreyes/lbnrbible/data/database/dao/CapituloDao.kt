@@ -2,10 +2,10 @@ package com.dnorvinreyes.lbnrbible.data.database.dao
 
 import androidx.room.Dao
 import androidx.room.Query
-import com.dnorvinreyes.lbnrbible.data.database.entity.Capitulo
+import com.dnorvinreyes.lbnrbible.data.database.entity.ChapterEntity
 
 @Dao
 interface CapituloDao {
     @Query("SELECT * FROM capitulos WHERE numero_libro = :numeroLibro order by 1")
-    suspend fun getAllCapitulos(numeroLibro: Int): List<Capitulo>
+    suspend fun getAllCapitulos(numeroLibro: Int): List<ChapterEntity>
 }

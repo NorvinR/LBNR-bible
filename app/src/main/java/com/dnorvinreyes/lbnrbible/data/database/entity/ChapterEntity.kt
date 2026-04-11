@@ -12,12 +12,12 @@ import androidx.room.ForeignKey
     ],
     foreignKeys = [
         ForeignKey(
-            entity = Libro::class,
+            entity = BookEntity::class,
             parentColumns = ["numero_libro"],
             childColumns = ["numero_libro"]
         )
     ])
-data class Capitulo(
+data class ChapterEntity(
     @ColumnInfo(name = "numero_libro") val numeroLibro: Int,
     @ColumnInfo(name = "numero_capitulo") val numeroCapitulo: Int
 )
