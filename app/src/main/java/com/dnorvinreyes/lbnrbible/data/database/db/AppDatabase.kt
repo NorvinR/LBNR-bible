@@ -39,28 +39,6 @@ import com.dnorvinreyes.lbnrbible.data.database.entity.VerseEntity
 
 abstract class AppDatabase : RoomDatabase() {
     // DAOs
-    abstract fun libroDao(): BookDao
-    abstract fun capituloDao(): ChapterDao
-
-    companion object {
-
-        @Volatile
-        private var INSTANCE: AppDatabase? = null
-
-        fun getDatabase(context: Context): AppDatabase {
-            return INSTANCE ?: synchronized(this) {
-                val instance = Room.databaseBuilder(
-                    context.applicationContext,
-                    AppDatabase::class.java,
-                    "biblia.db" // Nombre interno de la base de datos
-                )
-                    .createFromAsset("databases/biblia.db")
-                    .fallbackToDestructiveMigration() // Opcional
-                    .build()
-                INSTANCE = instance
-                instance
-            }
-        }
-    }
-
+    abstract fun getBookDao(): BookDao
+    abstract fun getChapterDao(): ChapterDao
 }

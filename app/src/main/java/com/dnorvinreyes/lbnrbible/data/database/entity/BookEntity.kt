@@ -3,9 +3,9 @@ package com.dnorvinreyes.lbnrbible.data.database.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 
-@Entity(tableName = "libros",
-    primaryKeys = ["numero_libro"])
+@Entity(tableName = "books",
+    primaryKeys = ["book_number"])
 data class BookEntity(
-    @ColumnInfo(name = "numero_libro") val numeroLibro: Int,
-    @ColumnInfo(name = "nombre_libro") val nombreLibro: String
+    @ColumnInfo(name = "book_number") val bookNumber: Int,
+    @ColumnInfo(name = "book_name") val bookName: String
 )

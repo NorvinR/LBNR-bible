@@ -11,7 +11,7 @@ import javax.inject.Inject
 
 
 class BibleRepositoryImp @Inject constructor (
-    private val bookDao: BookDao
+    private val bookDao: BookDao // Hilt sacara esto de RoomModule
 ) : BibleRepository {
     override suspend fun getBooks(): List<Book> {
         val books =  bookDao.getAllBooks()

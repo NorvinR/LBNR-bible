@@ -15,7 +15,6 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor (
     private val getBookUseCase: GetBookUseCase
 ) : ViewModel() {
-
     // 1. La variable interna que mutamos
     private val _uiState = MutableStateFlow(MainUiState())
     // 2. La variable pública que el Composable observa (inmutable)
@@ -35,7 +34,7 @@ class MainViewModel @Inject constructor (
             }catch (e: Exception){
                 // Manejo de errores
                 _uiState.update { it.copy(
-                    errorMessage = "Error al cargar libros",
+                    errorMessage = "Error al cargar libros | ${e.cause}",
                     isLoading = false
                 ) }
             }

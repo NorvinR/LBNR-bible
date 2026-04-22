@@ -1,14 +1,13 @@
 package com.dnorvinreyes.lbnrbible.domain.usecase
 
-import com.dnorvinreyes.lbnrbible.data.repository.BibleRepositoryImp
 import com.dnorvinreyes.lbnrbible.domain.model.Book
+import com.dnorvinreyes.lbnrbible.domain.repository.BibleRepository
+import javax.inject.Inject
 
-data class GetBookUseCase(
-    private val repository: BibleRepositoryImp
+class GetBookUseCase @Inject constructor(
+    private val repository: BibleRepository
 ) {
     suspend operator fun invoke(): List<Book> {
         return repository.getBooks()
     }
 }
-
-

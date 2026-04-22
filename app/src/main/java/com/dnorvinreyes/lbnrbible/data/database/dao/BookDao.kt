@@ -6,6 +6,6 @@ import com.dnorvinreyes.lbnrbible.data.database.entity.BookEntity
 
 @Dao
 interface BookDao {
-    @Query("SELECT * FROM libros order by 1")
+    @Query("SELECT * FROM books order by 1")
     suspend fun getAllBooks(): List<BookEntity>
 }
